@@ -31,15 +31,17 @@ set number
 set cursorline
 highlight CursorLine guibg=#fbf1c7
 
-" --- Airline setup
+" --- Airline/Tabline setup
 let g:airline_theme = 'gruvbox'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#show_splits = 1
-let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#show_tab_type = 0
-let airline#extensions#tabline#current_first = 0
+let g:airline#extensions#tabline#enabled = '1'
+let g:airline#extensions#tabline#show_buffers = '0'
+let g:airline#extensions#tabline#exclude_preview = '0'
+let g:airline#extensions#tabline#show_close_button = '0'
+let g:airline#extensions#tabline#show_splits = '1'
+let g:airline#extensions#tabline#show_tabs = '1'
+let g:airline#extensions#tabline#show_tab_nr = '0'
+let g:airline#extensions#tabline#show_tab_type = '0'
+let airline#extensions#tabline#current_first = '0'
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline_left_sep = ''
@@ -55,7 +57,11 @@ let g:clang_library_path='/usr/lib/llvm-10/lib/libclang.so'
 set completeopt=menu
 
 " --- NERDTree
-let g:NERDTreeQuitOnOpen = '1'
+let g:NERDTreeNaturalSort = '1'
+let g:NERDTreeShowHidden = '1'
+let g:NERDTreeMinimalUI = '1'
+let g:NERDTreeQuitOnOpen = '0'
+let g:NERDTreeCustomOpenArgs = {'file': {'reuse': 'all', 'where': 't', 'keepopen': 1}, 'dir': {}}
 
 " --- Shortcuts
-map <C-\> :NERDTreeToggle<CR>
+map <silent> <C-B> :NERDTreeToggle<CR>
