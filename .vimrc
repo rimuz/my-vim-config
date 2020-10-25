@@ -7,13 +7,18 @@ call plug#begin()
     " --- Auto completition
     Plug 'xavierd/clang_complete'
 
+    " --- Utilities
+    Plug 'tpope/vim-fugitive'
+
     " --- Layout
     Plug 'preservim/NERDTree'
     Plug 'vim-airline/vim-airline'
+    Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-"  --- Indentation settings
+"  --- Indentation/Encoding settings
+set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -27,6 +32,7 @@ let g:gruvbox_invert_selection = '0'
 colorscheme gruvbox
 
 " --- Line highlight
+set mouse=a
 set number
 set cursorline
 highlight CursorLine guibg=#fbf1c7
@@ -34,6 +40,7 @@ highlight CursorLine guibg=#fbf1c7
 " --- Airline/Tabline setup
 let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#enabled = '1'
+let g:airline#extensions#branch#enabled= '1'
 let g:airline#extensions#tabline#show_buffers = '0'
 let g:airline#extensions#tabline#exclude_preview = '0'
 let g:airline#extensions#tabline#show_close_button = '0'
@@ -46,6 +53,11 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch = ''
 
 " --- Remove some messages on the bottom bar
 set noshowmode
@@ -61,7 +73,7 @@ let g:NERDTreeNaturalSort = '1'
 let g:NERDTreeShowHidden = '1'
 let g:NERDTreeMinimalUI = '1'
 let g:NERDTreeQuitOnOpen = '0'
-let g:NERDTreeCustomOpenArgs = {'file': {'reuse': 'all', 'where': 't', 'keepopen': 1}, 'dir': {}}
+let g:NERDTreeCustomOpenArgs = {'file':{'reuse':'all','where':'t','keepopen':1},'dir':{}}
 
 " --- Shortcuts
 map <silent> <C-B> :NERDTreeToggle<CR>
