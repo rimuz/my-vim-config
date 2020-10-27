@@ -76,4 +76,6 @@ let g:NERDTreeQuitOnOpen = '0'
 let g:NERDTreeCustomOpenArgs = {'file':{'reuse':'all','where':'t','keepopen':1},'dir':{}}
 
 " --- Shortcuts
+set timeoutlen=1000
+set ttimeoutlen=100
 map <silent> <C-B> :NERDTreeToggle<CR>
