@@ -17,6 +17,9 @@ call plug#begin()
 
 call plug#end()
 
+"  --- Remove bell
+set vb t_vb=
+
 "  --- Indentation/Encoding settings
 set encoding=utf-8
 set tabstop=4
@@ -32,9 +35,9 @@ let g:gruvbox_invert_selection = '0'
 colorscheme gruvbox
 
 " --- Line highlight
-set mouse=a
 set number
 set cursorline
+set mouse=a
 highlight CursorLine guibg=#fbf1c7
 
 " --- Airline/Tabline setup
@@ -65,7 +68,11 @@ set noshowcmd
 set shortmess+=F
 
 " --- Autocompletition
-let g:clang_library_path='/usr/lib/llvm-10/lib/libclang.so'
+if has('win32')
+    let g:clang_library_path='C:\Program Files\LLVM\lib\libclang.lib'
+else
+    let g:clang_library_path='/usr/lib/llvm-10/lib/libclang.so'
+endif
 set completeopt=menu
 
 " --- NERDTree
