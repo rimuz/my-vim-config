@@ -5,7 +5,8 @@ call plug#begin()
     Plug 'morhetz/gruvbox'
 
     " --- Auto completition
-    Plug 'xavierd/clang_complete'
+    Plug 'ycm-core/YouCompleteMe'
+    Plug 'jeaye/color_coded'
 
     " --- Utilities
     Plug 'tpope/vim-fugitive'
@@ -68,11 +69,6 @@ set noshowcmd
 set shortmess+=F
 
 " --- Autocompletition
-if has('win32')
-    let g:clang_library_path='C:\Program Files\LLVM\lib\libclang.lib'
-else
-    let g:clang_library_path='/usr/lib/llvm-10/lib/libclang.so'
-endif
 set completeopt=menu
 
 " --- NERDTree
