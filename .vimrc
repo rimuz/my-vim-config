@@ -39,6 +39,7 @@ colorscheme gruvbox
 set number
 set cursorline
 set mouse=a
+set signcolumn=number
 highlight CursorLine guibg=#fbf1c7
 
 " --- Airline/Tabline setup
