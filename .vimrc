@@ -9,6 +9,7 @@ call plug#begin()
 
     " --- Utilities
     Plug 'tpope/vim-fugitive'
+    Plug 'ctrlpvim/ctrlp.vim'
 
     " --- Layout
     Plug 'preservim/NERDTree'
@@ -33,6 +34,10 @@ let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_italic = '1'
 let g:gruvbox_invert_selection = '0'
 colorscheme gruvbox
+
+" --- Sessions
+set ssop-=options
+set ssop-=folds
 
 " --- Line highlight
 set number
