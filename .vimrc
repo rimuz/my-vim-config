@@ -6,7 +6,6 @@ call plug#begin()
 
     " --- Auto completition
     Plug 'ycm-core/YouCompleteMe'
-    Plug 'jeaye/color_coded'
 
     " --- Utilities
     Plug 'tpope/vim-fugitive'
