@@ -29,8 +29,9 @@ set expandtab
 
 " --- Gruvbox
 set termguicolors
-set background=light
 let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_contrast_dark = 'medium'
+set background=dark
 let g:gruvbox_italic = '1'
 let g:gruvbox_invert_selection = '0'
 colorscheme gruvbox
@@ -44,7 +45,7 @@ set number
 set cursorline
 set mouse=a
 set signcolumn=number
-highlight CursorLine guibg=#fbf1c7
+" highlight CursorLine guibg=#fbf1c7
 
 " --- Airline/Tabline setup
 let g:airline_theme = 'gruvbox'
@@ -73,8 +74,9 @@ set noshowmode
 set noshowcmd
 set shortmess+=F
 
-" --- Autocompletition
+" --- Autocompletition and search
 set completeopt=menu
+set incsearch
 
 " --- NERDTree
 let g:NERDTreeNaturalSort = '1'
