@@ -38,7 +38,6 @@ colorscheme gruvbox
 
 " --- Sessions
 set ssop-=options
-set ssop-=folds
 
 " --- Line highlight
 set number
@@ -74,9 +73,10 @@ set noshowmode
 set noshowcmd
 set shortmess+=F
 
-" --- Autocompletition and search
+" --- Autocompletition/search/folding
 set completeopt=menu
 set incsearch
+set foldmethod=syntax
 
 " --- NERDTree
 let g:NERDTreeNaturalSort = '1'
