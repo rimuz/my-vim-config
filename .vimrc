@@ -1,6 +1,5 @@
 " --- Plugins
 call plug#begin()
-
     " --- Color schemes
     Plug 'morhetz/gruvbox'
 
@@ -15,7 +14,6 @@ call plug#begin()
     Plug 'preservim/NERDTree'
     Plug 'vim-airline/vim-airline'
     Plug 'ryanoasis/vim-devicons'
-
 call plug#end()
 
 "  --- Remove bell
@@ -76,7 +74,7 @@ set shortmess+=F
 " --- Autocompletition/search/folding
 set completeopt=menu
 set incsearch
-set foldmethod=syntax
+set foldmethod=indent
 
 " --- NERDTree
 let g:NERDTreeNaturalSort = '1'
