@@ -10,8 +10,11 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     Plug 'ctrlpvim/ctrlp.vim'
 
-    " --- Layout
+    " --- NERDTree
     Plug 'preservim/NERDTree'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+    " --- Layout
     Plug 'vim-airline/vim-airline'
     Plug 'ryanoasis/vim-devicons'
 call plug#end()
@@ -42,7 +45,6 @@ set number
 set cursorline
 set mouse=a
 set signcolumn=number
-" highlight CursorLine guibg=#fbf1c7
 
 " --- Airline/Tabline setup
 let g:airline_theme = 'gruvbox'
@@ -82,6 +84,23 @@ let g:NERDTreeShowHidden = '1'
 let g:NERDTreeMinimalUI = '1'
 let g:NERDTreeQuitOnOpen = '0'
 let g:NERDTreeCustomOpenArgs = {'file':{'reuse':'all','where':'t','keepopen':1},'dir':{}}
+
+" --- NERDTree colors
+let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = '1'
+let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = '1'
+
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+
+let g:NERDTreeExactMatchHighlightColor = {}
+let g:NERDTreeExactMatchHighlightColor['/'] = "FFFFFF"
+
+let g:NERDTreePatternMatchHighlightColor = {}
+
+let g:WebDevIconsDefaultFolderSymbolColor = "83a598"
 
 " --- Shortcuts
 set timeoutlen=1000
