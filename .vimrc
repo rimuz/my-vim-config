@@ -3,8 +3,9 @@ call plug#begin()
     " --- Color schemes
     Plug 'morhetz/gruvbox'
 
-    " --- Auto completition
+    " --- Auto completition and format
     Plug 'ycm-core/YouCompleteMe'
+    Plug 'rhysd/vim-clang-format'
 
     " --- Utilities
     Plug 'tpope/vim-fugitive'
@@ -77,6 +78,7 @@ set shortmess+=F
 set completeopt=menu
 set incsearch
 set foldmethod=indent
+let g:ycm_confirm_extra_conf = '0'
 
 " --- NERDTree
 let g:NERDTreeNaturalSort = '1'
@@ -94,15 +96,10 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-
-let g:NERDTreeExactMatchHighlightColor = {}
-let g:NERDTreeExactMatchHighlightColor['/'] = "FFFFFF"
-
-let g:NERDTreePatternMatchHighlightColor = {}
-
 let g:WebDevIconsDefaultFolderSymbolColor = "83a598"
 
 " --- Shortcuts
 set timeoutlen=1000
 set ttimeoutlen=100
 map <silent> <C-B> :NERDTreeToggle<CR>
+map <silent> <Leader>f :ClangFormat<CR>
