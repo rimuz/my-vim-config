@@ -79,6 +79,7 @@ set completeopt=menu
 set incsearch
 set foldmethod=indent
 let g:ycm_confirm_extra_conf = '0'
+let g:ycm_always_populate_location_list = 1
 
 " --- NERDTree
 let g:NERDTreeNaturalSort = '1'
@@ -103,3 +104,6 @@ set timeoutlen=1000
 set ttimeoutlen=100
 map <silent> <C-B> :NERDTreeToggle<CR>
 map <silent> <Leader>f :ClangFormat<CR>
+map <silent> <Leader>n :lnext<CR>
+map <silent> <Leader>N :lprevious<CR>
+map <silent> <Leader>G :llast<CR>
