@@ -6,6 +6,7 @@ call plug#begin()
     " --- Auto completition and format
     Plug 'ycm-core/YouCompleteMe'
     Plug 'rhysd/vim-clang-format'
+    Plug 'octol/vim-cpp-enhanced-highlight'
 
     " --- Utilities
     Plug 'tpope/vim-fugitive'
