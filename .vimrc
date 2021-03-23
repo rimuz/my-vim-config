@@ -5,6 +5,8 @@ call plug#begin()
 
     " --- Auto completition and format
     Plug 'ycm-core/YouCompleteMe'
+    Plug 'l3nkz/ycmconf'
+
     Plug 'rhysd/vim-clang-format'
     Plug 'octol/vim-cpp-enhanced-highlight'
 
@@ -37,7 +39,10 @@ let g:gruvbox_contrast_dark = 'medium'
 set background=dark
 let g:gruvbox_italic = '1'
 let g:gruvbox_invert_selection = '0'
-colorscheme gruvbox
+
+try
+    colorscheme gruvbox
+endtry
 
 " --- Sessions
 set ssop-=options
