@@ -7,8 +7,13 @@ call plug#begin()
     Plug 'ycm-core/YouCompleteMe'
     Plug 'l3nkz/ycmconf'
 
+    " --- C++
     Plug 'rhysd/vim-clang-format'
     Plug 'octol/vim-cpp-enhanced-highlight'
+
+    " --- Flutter & Dart
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " --- Utilities
     Plug 'tpope/vim-fugitive'
