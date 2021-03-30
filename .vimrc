@@ -3,10 +3,6 @@ call plug#begin()
     " --- Color schemes
     Plug 'morhetz/gruvbox'
 
-    " --- Auto completition and format
-    Plug 'ycm-core/YouCompleteMe'
-    Plug 'l3nkz/ycmconf'
-
     " --- C++
     Plug 'rhysd/vim-clang-format'
     Plug 'octol/vim-cpp-enhanced-highlight'
@@ -92,6 +88,9 @@ set foldmethod=indent
 let g:ycm_confirm_extra_conf = '0'
 let g:ycm_always_populate_location_list = 1
 
+" ---  Dart
+let g:dart_style_guide = 4
+
 " --- NERDTree
 let g:NERDTreeNaturalSort = '1'
 let g:NERDTreeShowHidden = '1'
@@ -109,6 +108,10 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 let g:WebDevIconsDefaultFolderSymbolColor = "83a598"
+
+" --- Completition Tab & shift+Tab mappings
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " --- Shortcuts
 set timeoutlen=1000
