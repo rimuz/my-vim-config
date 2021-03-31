@@ -1,3 +1,9 @@
+" --- Install vim-plug if absent:
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " --- Plugins
 call plug#begin()
     " --- Color schemes
@@ -81,15 +87,15 @@ set noshowmode
 set noshowcmd
 set shortmess+=F
 
-" --- Autocompletition/search/folding
+" --- Search and folding
 set completeopt=menu
 set incsearch
 set foldmethod=indent
 let g:ycm_confirm_extra_conf = '0'
 let g:ycm_always_populate_location_list = 1
 
-" ---  Dart
-let g:dart_style_guide = 4
+" --- CoC completition
+let g:coc_config_home = '~'
 
 " --- NERDTree
 let g:NERDTreeNaturalSort = '1'
@@ -116,8 +122,10 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " --- Shortcuts
 set timeoutlen=1000
 set ttimeoutlen=100
-map <silent> <C-B> :NERDTreeToggle<CR>
-map <silent> <Leader>f :ClangFormat<CR>
-map <silent> <Leader>n :lnext<CR>
-map <silent> <Leader>N :lprevious<CR>
-map <silent> <Leader>G :llast<CR>
+nmap <silent> <C-B> :NERDTreeToggle<CR>
+nmap <silent> <Leader>f :ClangFormat<CR>
+" Refresh NERDTree + Ctrl-P plugins
+nmap <Leader>r :NERDTreeFocus<cr>R:CtrlPClearAllCaches<cr>
+" Go to next and previous compilation errors:
+map <silent> <Leader>n <Plug>(coc-diagnostic-next)
+map <silent> <Leader>N <Plug>(coc-diagnostic-prev)
