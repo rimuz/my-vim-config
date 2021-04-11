@@ -91,8 +91,6 @@ set shortmess+=F
 set completeopt=menu
 set incsearch
 set foldmethod=indent
-let g:ycm_confirm_extra_conf = '0'
-let g:ycm_always_populate_location_list = 1
 
 " --- CoC completition
 let g:coc_config_home = '~'
@@ -125,7 +123,7 @@ set ttimeoutlen=100
 nmap <silent> <C-B> :NERDTreeToggle<CR>
 nmap <silent> <Leader>f :ClangFormat<CR>
 " Refresh NERDTree + Ctrl-P plugins
-nmap <Leader>r :NERDTreeFocus<cr>R:CtrlPClearAllCaches<cr>
+nmap <silent> <Leader>r :NERDTreeFocus<cr>R:NERDTreeClose<cr>:CtrlPClearAllCaches<cr>
 " Go to next and previous compilation errors:
 map <silent> <Leader>n <Plug>(coc-diagnostic-next)
 map <silent> <Leader>N <Plug>(coc-diagnostic-prev)
